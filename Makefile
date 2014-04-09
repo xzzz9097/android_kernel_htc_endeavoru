@@ -363,7 +363,9 @@ LDFLAGS_MODULE  = -T $(srctree)/scripts/module-common.lds
 CFLAGS_KERNEL	= -march=armv7-a \
 		  -mfpu=neon \
 		  -mtune=cortex-a9 \
-		  -O2
+		  -O3 \
+		  -fno-unswitch-loops \
+		  -fno-inline-functions
 ifdef CONFIG_GCC_48_FIXES
   CFLAGS_KERNEL	+=	-Wno-sizeof-pointer-memaccess
 endif
